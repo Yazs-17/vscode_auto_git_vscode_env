@@ -1,0 +1,16 @@
+[
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.debug.start",
+        "args": {
+            "config": "Java调试当前文件"
+        }
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "workbench.action.debug.start",
+        "args": {
+            "config": "C/C++: g++编译和调试当前文件"
+        }
+    }
+]

@@ -1,0 +1,135 @@
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "type": "auto-debug",
+            "name": "自动",
+            "request": "launch",
+            "map": {
+                "*.cpp": "C++(g++)",
+                "*.c": "C(gcc)",
+                "*.py": "Python",
+                "*.java": "Java",
+                "*.js": "Nodejs"
+            }
+        },
+        {
+            "type": "java",
+            "name": "Java",
+            "request": "launch",
+            "args": [
+                "<",
+                "${fileDirname}\\io\\in.txt",
+                ">",
+                "${fileDirname}\\io\\out.txt"
+            ],
+            "mainClass": "${fileBasenameNoExtension}"
+        },
+        {
+            "name": "C++(g++)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\release\\${fileBasenameNoExtension}.exe",
+            "args": [
+                "<",
+                "${fileDirname}\\io\\in.txt",
+                ">",
+                "${fileDirname}\\io\\out.txt"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "g++编译"
+        },
+        {
+            "name": "C(gcc)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\release\\${fileBasenameNoExtension}.exe",
+            "args": [
+                "<",
+                "${fileDirname}\\io\\in.txt",
+                ">",
+                "${fileDirname}\\io\\out.txt"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "gcc编译"
+        },
+        {
+            "name": "C/C++(msvc)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\release\\${fileBasenameNoExtension}.exe",
+            "args": [
+                "<",
+                "${fileDirname}\\io\\in.txt",
+                ">",
+                "${fileDirname}\\io\\out.txt"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "integratedTerminal",
+            "preLaunchTask": "msvc编译"
+        },
+        {
+            "name": "Python",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "<",
+                "${fileDirname}\\io\\in.txt",
+                ">",
+                "${fileDirname}\\io\\out.txt"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Nodejs",
+            "type": "node",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            // "args": [
+            //     "<",
+            //     "${fileDirname}\\io\\in.txt",
+            //     ">",
+            //     "${fileDirname}\\io\\out.txt"
+            // ],
+            "internalConsoleOptions": "neverOpen"
+        }
+    ],
+}
